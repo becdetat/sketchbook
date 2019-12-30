@@ -1,6 +1,6 @@
 import React from 'react';
 import SidebarContainer from '../containers/SidebarContainer';
-import DrawingSpace from './DrawingSpace.js';
+import DrawingSpaceContainer from '../containers/DrawingSpaceContainer.js';
 import { Provider } from 'react-redux';
 import store from '../store';
 
@@ -11,7 +11,7 @@ function App() {
     <Provider store={store}>
       <div className="app">
         <SidebarContainer/>
-        <DrawingSpace/>
+        <DrawingSpaceContainer/>
       </div>
     </Provider>
   );
