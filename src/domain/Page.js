@@ -1,5 +1,7 @@
 export default class Page {
-  constructor( title /* , drawing space things */ ) {
+  constructor( id, title ) {
+    this.id = id;
     this.title = title;
+    this.lines = [];
   }
 }

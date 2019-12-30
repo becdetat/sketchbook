@@ -10,7 +10,6 @@ const state = loadStateFromLocalStorage();
 const store = createStore( rootReducer, state );
 
 const saveState = () => {
-  console.log(store.getState())
   saveStateToLocalStorage( store.getState() );
   // This is where remote sync would be started
 };

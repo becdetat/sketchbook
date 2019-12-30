@@ -7,7 +7,7 @@ export default function Sidebar(props) {
   const {
     addPage,
     pages,
-    currentPage,
+    currentPageId,
     selectPage
   } = props;
 
@@ -30,7 +30,7 @@ export default function Sidebar(props) {
           <PageListItem
             key={index}
             page={page}
-            isCurrentPage={page === currentPage}
+            isCurrentPage={page.id === currentPageId}
             selectPage={selectPage}
           />
         ) ) }

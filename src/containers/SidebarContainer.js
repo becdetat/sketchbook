@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = function( state ) {
   return {
-    pages: state.pages,
-    currentPage: state.currentPage
+    pages: state.app.pages,
+    currentPageId: state.app.currentPageId,
   };
 };
 
