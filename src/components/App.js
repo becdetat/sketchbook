@@ -14,6 +14,9 @@ function App() {
       <div className="app">
         <BrowserRouter>
           <Switch>
+            {/* SidebarContainer is repeated inside the Switch so that it can
+              get access to the route (for determining the current page). This
+              feels a little hacky. */}
             <Route path="/:id" children={(<><SidebarContainer/><DrawingSpaceRouting/></>)}/>
             <Route path="/" children={(<><SidebarContainer/><DrawingSpaceRouting/></>)}/>
           </Switch>
