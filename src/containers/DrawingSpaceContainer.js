@@ -1,9 +1,9 @@
 import DrawingSpace from '../components/DrawingSpace';
 import { connect } from 'react-redux';
 
-const mapStateToProps = function( state ) {
+const mapStateToProps = function( state, myProps ) {
   const page = !! state.app.pages
-               && state.app.pages.find( x => x.id === state.app.currentPageId );
+               && state.app.pages.find( x => x.id === myProps.pageId );
 
   return {
     page

@@ -1,5 +1,6 @@
 import React from 'react';
-import PageListItem from './PageListItem'
+import PageListItem from './PageListItem';
+import { useParams } from 'react-router-dom';
 
 import './Sidebar.css';
 
@@ -7,10 +8,9 @@ export default function Sidebar(props) {
   const {
     addPage,
     pages,
-    currentPageId,
-    selectPage
   } = props;
-
+  const { id } = useParams();
+  const pageId = parseInt( id );
   const clickNewPageHandler = () => {
     const title = prompt('Enter the title for the new page');
 
@@ -30,8 +30,7 @@ export default function Sidebar(props) {
           <PageListItem
             key={index}
             page={page}
-            isCurrentPage={page.id === currentPageId}
-            selectPage={selectPage}
+            isCurrentPage={page.id === pageId}
           />
         ) ) }
       </ul>

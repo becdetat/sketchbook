@@ -3,7 +3,6 @@ import maxBy from 'lodash/maxBy';
 
 const initialState = {
   pages: [],
-  currentPageId: null
 };
 
 function getStateUpdatedWithPage( state, page ) {
@@ -29,13 +28,6 @@ function getNewId( pages ) {
 
 export default function( state = initialState, action ) {
   switch ( action.type ) {
-    case 'SELECT_PAGE':
-      const { page } = action.payload;
-
-      return {
-        ...state,
-        currentPageId: page.id
-      };
     case 'ADD_PAGE':
       const { title } = action.payload;
       const newId = getNewId( state.pages );
@@ -47,7 +39,6 @@ export default function( state = initialState, action ) {
           ...state.pages,
           newPage
         ],
-        currentPageId: newPage.id
       };
     case 'ADD_LINE_TO_PAGE': {
       const { line, pageId } = action.payload;

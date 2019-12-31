@@ -1,22 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function PageListItem(props) {
   const {
     page,
     isCurrentPage,
-    selectPage,
   } = props;
-
-  const handleClick = (event) => {
-    event.preventDefault();
-    selectPage(page);
-  }
 
   return (
     <li
       className={isCurrentPage ? 'current-page' : ''}
     >
-      <a href="#" onClick={handleClick}>{page.title}</a>
+      <Link to={`/${page.id}`}>
+        {page.title}
+      </Link>
     </li>
   )
 }
